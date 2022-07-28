@@ -2,6 +2,8 @@
 
 The project for Rolling Scope School Stage 2 
 
+Task: https://github.com/rolling-scopes-school/tasks/tree/master/tasks/online-store
+
 Deploy: https://seala11.github.io/online-store/
 
 ## Stack
