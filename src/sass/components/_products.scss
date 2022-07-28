@@ -1,0 +1,118 @@
+@use '@src/sass/abstracts/variables' as *;
+@use '@src/sass/abstracts/mixins' as *;
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 3rem;
+    grid-column-gap: 3rem;
+    justify-items: center;
+    padding-left: 3rem;
+    padding-bottom: 3rem;
+    height: fit-content;
+
+    @include media-laptop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-mobile {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    @include media-mobile-small {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 0 1rem 0.2rem $colorBorder;
+        width: 25rem;
+        height: fit-content;
+        border-radius: 1.6rem;
+        overflow: hidden;
+        background-color: $color-bg;
+    }
+
+    &__error-wrapper {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .error-wrapper__title {
+            font-size: 1.9rem;
+            margin: 0.8rem;
+            line-height: initial;
+        }
+    }
+}
+
+.item {
+    @include sans;
+    
+    &__img {
+        width: 25rem;
+        height: 31.2rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+
+        &--sale {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 5rem;
+            height: 5rem;
+            background-image: url('../assets/images/sale.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__desc {
+        margin: 0;
+        padding: 0.5rem 0;
+    }
+
+    &__name {
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-align: center;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    &__price,
+    &__size,
+    &__color,
+    &__quantity {
+        font-size: 1.4rem;
+        width: 90%;
+        text-align: start;
+    }
+
+    &__button {
+        @include buttonPrimary;
+
+        margin-top: 0.6rem;
+
+        &--added {
+            border: 0.2rem solid $error;
+            background-color: lighten($error, 5%);
+
+            &:hover {
+                background-color: lighten($error, 8%);
+            }
+        }
+    }
+}
