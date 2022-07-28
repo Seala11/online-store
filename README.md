@@ -1,6 +1,8 @@
 ## About
 
-The project for Rolling Scope School Stage 2
+The project for Rolling Scope School Stage 2 
+
+Deploy: https://seala11.github.io/online-store/
 
 ## Stack
 
